@@ -39,11 +39,7 @@ if (isset($_POST["submit"])) {
 
   <form action="" method="post">
     <ul>
-      <li>
-        <label for="gambar">Gambar : </label>
-        <input type="text" name="gambar" id="gambar" required>
-      </li>
-      <br>
+
       <li>
         <label for="nama">Nama : </label>
         <input type="text" name="nama" id="nama" required>
@@ -52,6 +48,11 @@ if (isset($_POST["submit"])) {
       <li>
         <label for="harga">Harga : </label>
         <input type="text" name="harga" id="harga" required>
+      </li>
+      <br>
+      <li>
+        <label for="gambar">Gambar : </label>
+        <input type="text" name="gambar" id="gambar" required>
       </li>
       <br>
       <li>

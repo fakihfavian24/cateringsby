@@ -32,12 +32,12 @@ $menu  = query("SELECT * FROM menu");
     <?php foreach ($menu as $mn) : ?>
       <tr>
         <td><?= $i; ?></td>
-        <td><img src="../images/<?= $mn["gambar"] ?>" width="80"></td>
-        <td><?= $mn["nama"] ?></td>
-        <td><?= $mn["harga"] ?></td>
+        <td><img src="../images/<?= $mn["gambar"]; ?>" width="80"></td>
+        <td><?= $mn["nama"]; ?></td>
+        <td><?= $mn["harga"]; ?></td>
         <td>
           <a href="">ubah</a>
-          <a href="">hapus</a>
+          <a href="hapus.php?id=<?= $mn["id"]; ?>" onclick="return confirm('yakin?');">hapus</a>
         </td>
       </tr>
       <?php $i++; ?>

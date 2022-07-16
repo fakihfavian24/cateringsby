@@ -1,6 +1,12 @@
 <?php
 require 'functions.php';
+
 $menu  = query("SELECT * FROM menu");
+
+if (isset($_POST["cari"])) {
+  $menu = cari($_POST["keyword"]);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +24,12 @@ $menu  = query("SELECT * FROM menu");
 
   <a href="tambah.php">Tambah Data</a>
   <br><br>
+
+  <form action="" method="post">
+    <input type="text" name="keyword" size="40" autofocus placeholder="masukkan keyword pencarian.." autocomplete="off">
+    <button type="submit" name="cari">Search!</button>
+  </form>
+  <br>
 
   <table border="1" cellpadding="10" cellspacing="0">
 

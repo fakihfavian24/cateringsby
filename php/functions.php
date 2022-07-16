@@ -55,3 +55,13 @@ function ubah($data)
 
   return mysqli_affected_rows($conn);
 }
+
+function cari($keyword)
+{
+  $query = "SELECT * FROM menu
+                WHERE
+                nama LIKE '%$keyword%'
+                ";
+
+  return query($query);
+}

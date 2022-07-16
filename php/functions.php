@@ -36,3 +36,22 @@ function hapus($id)
 
   return mysqli_affected_rows($conn);
 }
+
+function ubah($data)
+{
+  global $conn;
+  $id = $data["id"];
+  $gambar = htmlspecialchars($data["gambar"]);
+  $nama = htmlspecialchars($data["nama"]);
+  $harga = htmlspecialchars($data["harga"]);
+
+  $query = "UPDATE menu SET
+              gambar = '$gambar',
+              nama = '$nama',
+              harga = '$harga'
+            WHERE id = $id
+              ";
+  mysqli_query($conn, $query);
+
+  return mysqli_affected_rows($conn);
+}

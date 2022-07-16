@@ -36,7 +36,7 @@ $menu  = query("SELECT * FROM menu");
         <td><?= $mn["nama"]; ?></td>
         <td><?= $mn["harga"]; ?></td>
         <td>
-          <a href="">ubah</a>
+          <a href="ubah.php?id=<?= $mn["id"]; ?>">ubah</a>
           <a href="hapus.php?id=<?= $mn["id"]; ?>" onclick="return confirm('yakin?');">hapus</a>
         </td>
       </tr>

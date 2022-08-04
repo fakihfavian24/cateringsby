@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+  header("Location: login.php");
+  exit;
+}
+
 require 'functions.php';
 
 $menu  = query("SELECT * FROM menu");
@@ -19,6 +26,8 @@ if (isset($_POST["cari"])) {
 </head>
 
 <body>
+
+  <a href="logout.php">Logout</a>
 
   <h1>Daftar Menu</h1>
 

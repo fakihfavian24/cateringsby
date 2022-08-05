@@ -50,8 +50,9 @@ if (isset($_POST["submit"])) {
 
   <h1>Ubah data menu</h1>
 
-  <form action="" method="post">
+  <form action="" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $mn["id"]; ?>">
+    <input type="hidden" name="gambarLama" value="<?= $mn["gambar"]; ?>">
     <ul>
       <li>
         <label for="nama">Nama : </label>
@@ -64,8 +65,9 @@ if (isset($_POST["submit"])) {
       </li>
       <br>
       <li>
-        <label for="gambar">Gambar : </label>
-        <input type="text" name="gambar" id="gambar" required value="<?= $mn["gambar"]; ?>">
+        <label for="gambar">Gambar : </label><br>
+        <img src="../images/<?= $mn["gambar"]; ?>" width="40"><br>
+        <input type="file" name="gambar" id="gambar">
       </li>
       <br>
       <li>

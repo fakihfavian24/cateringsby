@@ -66,7 +66,7 @@ if (isset($_POST["submit"])) {
       <br>
       <li>
         <label for="gambar">Gambar : </label><br>
-        <img src="../images/<?= $mn["gambar"]; ?>" width="40"><br>
+        <img src="../images/<?= $mn["gambar"]; ?>" width="50"><br>
         <input type="file" name="gambar" id="gambar">
       </li>
       <br>

@@ -1,3 +1,20 @@
+<?php
+
+require 'php/functions.php';
+
+// Melakukan Query
+$menu = query("SELECT * FROM menu");
+
+if (isset($_POST["cari"])) {
+  $menu = cari($_POST["keyword"]);
+}
+
+$brownies = pickRandom("Brownies");
+$ketan = pickRandom("Ketan");
+$bika = pickRandom("Bika");
+$wingko = pickRandom("Wingko");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +30,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- link css -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/rev6.css">
 
 </head>
 
@@ -27,17 +44,17 @@
 
     <nav class="navbar">
       <a class="active" href="#home">home</a>
-      <a href="#about">about</a>
-      <a href="#popular">popular</a>
-      <a href="#review">review</a>
-      <a href="#order">order</a>
+      <a href="#category">kategori</a>
+      <a href="#about">tentang kami</a>
+      <a href="#popular">best seller</a>
+      <!-- <a href="#order">order</a> -->
     </nav>
 
     <div class="icons">
       <i class="fas fa-bars" id="menu-bars"></i>
       <i class="fas fa-search" id="search-icon"></i>
       <!-- <a href="#" class="fas fa-heart"></a> -->
-      <a href="#" class="fas fa-shopping-cart"></a>
+      <a href="php/login.php" class="fas fa-user"></a>
     </div>
 
   </header>
@@ -64,10 +81,10 @@
 
         <div class="swiper-slide slide">
           <div class="content">
-            <span>our special dish</span>
+            <span>menu spesial kami</span>
             <h3>spicy noodles</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore harum corporis nulla.</p>
-            <a href="#" class="btn">Order Now</a>
+            <a href="#" class="btn">Pesan Sekarang</a>
           </div>
           <div class="image">
             <img src="images/home-img-1.png" alt="">
@@ -76,10 +93,10 @@
 
         <div class="swiper-slide slide">
           <div class="content">
-            <span>our special dish</span>
+            <span>menu spesial kami</span>
             <h3>fried chicken</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore harum corporis nulla.</p>
-            <a href="#" class="btn">Order Now</a>
+            <a href="#" class="btn">Pesan Sekarang</a>
           </div>
           <div class="image">
             <img src="images/home-img-2.png" alt="">
@@ -88,10 +105,10 @@
 
         <div class="swiper-slide slide">
           <div class="content">
-            <span>our special dish</span>
+            <span>menu spesial kami</span>
             <h3>hot pizza</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore harum corporis nulla.</p>
-            <a href="#" class="btn">Order Now</a>
+            <a href="#" class="btn">Pesan Sekarang</a>
           </div>
           <div class="image">
             <img src="images/home-img-3.png" alt="">
@@ -109,50 +126,9 @@
 
   <!-- akhir section -->
 
-  <!-- awal about section -->
-
-  <section class="about" id="about">
-    <h3 class="sub-heading"> about us</h3>
-    <h1 class="heading"> why choose us?</h1>
-
-    <div class="row">
-      <div class="image">
-        <img src="images/about-img.png" alt="">
-      </div>
-
-      <div class="content">
-        <h3>best food in the country</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum veritatis qui, vero voluptas amet, impedit
-          assumenda magnam eius laborum et eaque praesentium! Libero velit fugiat vero odit blanditiis maiores
-          assumenda.</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi repellendus, reprehenderit architecto at
-          delectus praesentium labore deserunt voluptates nemo magnam.</p>
-        <div class="icons-container">
-          <div class="icons">
-            <i class="fas fa-shipping-fast"></i>
-            <span>free deliveery</span>
-          </div>
-          <div class="icons">
-            <i class="fas fa-dollar-sign"></i>
-            <span>easy payments</span>
-          </div>
-          <div class="icons">
-            <i class="fas fa-headset"></i>
-            <span>24/7 serveice</span>
-          </div>
-        </div>
-        <a href="#" class="btn">learn more</a>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- akhir about section -->
-
   <!-- awal category -->
 
-  <section class="category">
+  <section class="category" id="category">
 
     <a href="#" class="box">
       <img src="images/cat-1.png" alt="">
@@ -188,22 +164,64 @@
 
   <!-- akhir category -->
 
+  <!-- awal about section -->
+
+  <section class="about" id="about">
+    <h3 class="sub-heading"> tentang kami</h3>
+    <h1 class="heading"> mengapa memilih kami?</h1>
+
+    <div class="row">
+      <div class="image">
+        <img src="images/about-img.png" alt="">
+      </div>
+
+      <div class="content">
+        <h3>makanan terbaik disini</h3>
+        <p>Kami menyediakan berbagai macam kue dan makanan. Untuk pemesanan kami menggunakan sistem pre-order / pesan
+          terlebih dahulu(Pesan maksimal H-1).</p>
+        <p>Merupakan suatu kehormatan bagi kami, bahwa produk-produk kami dapat diterima dengan baik oleh
+          masyarakat.</p>
+        <div class="icons-container">
+          <!-- <div class="icons">
+            <i class="fas fa-shipping-fast"></i>
+            <span>free deliveery</span>
+          </div>
+          <div class="icons">
+            <i class="fas fa-dollar-sign"></i>
+            <span>easy payments</span>
+          </div> -->
+          <div class="icons">
+            <i class="fas fa-headset"></i>
+            <span>24/7 service</span>
+          </div>
+        </div>
+        <a href="#" class="btn">selengkapnya</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- akhir about section -->
+
+
+
   <!-- menu populer -->
 
   <section class="popular" id="popular">
 
     <h3 class="sub-heading"> best seller</h3>
-    <h1 class="heading"> our special dishes</h1>
+    <h1 class="heading"> menu spesial kami</h1>
 
     <div class="box-container">
 
-      <div class="box">
-        <a href="#" class="fas fa-heart"></a>
+      <div class="boxp">
+        <!-- <a href="#" class="fas fa-heart"></a> -->
         <div class="image">
-          <img src="images/dish-1.png" alt="">
+          <img src="images/<?= $brownies['gambar']; ?>" alt="">
         </div>
         <div class="content">
-          <h3>delicious food</h3>
+          <h3><?= $brownies['nama']; ?></h3>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -212,18 +230,18 @@
             <i class="fas fa-star-half"></i>
             <span> (50) </span>
           </div>
-          <div class="price">$40.00 <span>$50.00</span></div>
-          <a href="#" class="btn">add to cart</a>
+          <div class="price"><?= $brownies['harga']; ?> <span>Rp65.000</span></div>
+          <a href="detil.php?id=<?= $brownies['id'] ?>" class="btn">lihat</a>
         </div>
       </div>
 
-      <div class="box">
-        <a href="#" class="fas fa-heart"></a>
+      <div class="boxp">
+        <!-- <a href="#" class="fas fa-heart"></a> -->
         <div class="image">
-          <img src="images/dish-2.png" alt="">
+          <img src="images/<?= $ketan['gambar']; ?>" alt="">
         </div>
         <div class="content">
-          <h3>delicious food</h3>
+          <h3><?= $ketan['nama']; ?></h3>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -232,18 +250,18 @@
             <i class="fas fa-star-half"></i>
             <span> (50) </span>
           </div>
-          <div class="price">$40.00 <span>$50.00</span></div>
-          <a href="#" class="btn">add to cart</a>
+          <div class="price"><?= $ketan['harga']; ?> <span>Rp65.000</span></div>
+          <a href="detil.php?id=<?= $ketan['id'] ?>" class="btn">lihat</a>
         </div>
       </div>
 
-      <div class="box">
-        <a href="#" class="fas fa-heart"></a>
+      <div class="boxp">
+        <!-- <a href="#" class="fas fa-heart"></a> -->
         <div class="image">
-          <img src="images/dish-3.png" alt="">
+          <img src="images/<?= $bika['gambar']; ?>" alt="">
         </div>
         <div class="content">
-          <h3>delicious food</h3>
+          <h3><?= $bika['nama']; ?></h3>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -252,18 +270,18 @@
             <i class="fas fa-star-half"></i>
             <span> (50) </span>
           </div>
-          <div class="price">$40.00 <span>$50.00</span></div>
-          <a href="#" class="btn">add to cart</a>
+          <div class="price"><?= $bika['harga']; ?> <span>Rp65.000</span></div>
+          <a href="detil.php?id=<?= $bika['id'] ?>" class="btn">lihat</a>
         </div>
       </div>
 
-      <div class="box">
-        <a href="#" class="fas fa-heart"></a>
+      <div class="boxp">
+        <!-- <a href="#" class="fas fa-heart"></a> -->
         <div class="image">
-          <img src="images/dish-4.png" alt="">
+          <img src="images/<?= $wingko['gambar']; ?>" alt="">
         </div>
         <div class="content">
-          <h3>delicious food</h3>
+          <h3><?= $wingko['nama']; ?></h3>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -272,10 +290,12 @@
             <i class="fas fa-star-half"></i>
             <span> (50) </span>
           </div>
-          <div class="price">$40.00 <span>$50.00</span></div>
-          <a href="#" class="btn">add to cart</a>
+          <div class="price"><?= $wingko['harga']; ?> <span>Rp65.000</span></div>
+          <a href="detil.php?id=<?= $wingko['id'] ?>" class="btn">lihat</a>
         </div>
       </div>
+
+
 
     </div>
 

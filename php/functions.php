@@ -166,3 +166,12 @@ function registrasi($data)
 
   return mysqli_affected_rows($conn);
 }
+
+function pickRandom($keyword)
+{
+  $keyword = query("SELECT * FROM menu WHERE `nama` LIKE '%$keyword%'");
+  $random_pick = (rand(0, ((count($keyword)) - 1)));
+  $keyword = $keyword[$random_pick];
+
+  return $keyword;
+}

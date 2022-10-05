@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+
+:root {
+  --green: #27ae60;
+  --black: #192a56;
+  --light-color: #666;
+  --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.sub-heading {
+  text-align: left;
+  color: var(--green);
+  font-size: 2.8rem;
+  padding-top: 1rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  font-style: 1.7rem;
+  color: #fff;
+  background: var(--black);
+  border-radius: .5rem;
+  cursor: pointer;
+  padding: .8rem 3rem;
+}
+
+.btn:hover {
+  background: var(--green);
+  letter-spacing: .1rem;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 1rem 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: var(--box-shadow);
+}
+
+header .logo {
+  color: var(--black);
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+header .logo i {
+  color: var(--green);
+}
+
+header .navbar a {
+  font-size: 1.7rem;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  color: var(--light-color);
+}
+
+
+header .icons a {
+  cursor: pointer;
+  margin-left: .5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  font-size: 1.7rem;
+  color: var(--black);
+  border-radius: 50%;
+  background: #eee;
+}
+
+
+header .icons a:hover {
+  color: #fff;
+  background: var(--green);
+  transform: rotate(360deg);
+}
+
+/* Kolom Search */
+
+#search-form {
+  /* border: .2rem solid rgba(0, 0, 0, 0.100); */
+  background-color: #eee;
+  border-radius: .5rem;
+  height: 4rem;
+  width: 60rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+
+}
+
+#search-form #search-box {
+  width: 100%;
+  padding-right: 1rem;
+  font-size: 1.7rem;
+  text-transform: none;
+  background-color: #eee;
+}
+
+#search-form label {
+  font-size: 2rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+#search-form label:hover {
+  color: var(--green);
+}
+
+/* Akhir Kolom Search */
+
+/* awal product */
+
+/* .popular {
+  background: #f7f7f7;
+} */
+
+.popular .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+}
+
+.box {
+  border-radius: .8rem;
+  position: relative;
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: .5px .5px 6px rgba(0, 0, 0, .100);
+}
+
+.box .fa-heart {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+.box .fa-heart:hover {
+  color: var(--green);
+}
+
+.box .image {
+  margin: 1rem 0;
+}
+
+.box .image img {
+  height: 15rem;
+}
+
+.box .content h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.box .content .stars {
+  padding: 1rem 0;
+  font-size: 1.4rem;
+}
+
+.box .content .stars i {
+  color: gold;
+}
+
+.box .content .stars span {
+  color: var(--light-color);
+}
+
+.box .content .price {
+  font-size: 2rem;
+  color: black;
+}
+
+.box .content .price span {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  text-decoration: line-through;
+}
+
+/* akhir product */
+
+/* awal footer */
+
+.footer {
+  background: #f7f7f7;
+}
+
+.footer .box-containers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box-containers .kotak h3 {
+  padding: .5rem 0;
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.footer .box-containers .kotak a {
+  display: block;
+  padding: .5rem 0;
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+
+.footer .box-containers .kotak a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.footer .credit {
+  text-align: center;
+  border-top: .1rem solid rgba(0, 0, 0, .1);
+  font-size: 2rem;
+  color: var(--black);
+  padding: .5rem;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.footer .credit span {
+  color: var(--green);
+}
+
+/* akhir footer */
+
+
+
+
+
+
+
+/* mode hp */
+
+@media (max-width:991px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 1rem 2rem;
+  }
+
+
+  #search-form {
+    height: 4rem;
+    width: 25rem;
+    border-radius: .5rem;
+  }
+
+
+  .home .image img {
+    width: 100%;
+  }
+
+  .popular .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .box {
+    border-radius: .8rem;
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .box .fa-heart {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    cursor: pointer;
+  }
+
+  .box .fa-heart:hover {
+    color: var(--green);
+  }
+
+  .box .image {
+    margin: 1rem 0;
+  }
+
+  .box .image img {
+    height: 9rem;
+  }
+
+  .box .content h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+  }
+
+  .box .content .stars {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+  }
+
+  .box .content .stars i {
+    color: gold;
+  }
+
+  .box .content .stars span {
+    color: var(--light-color);
+  }
+
+  .box .content .price {
+    font-size: 1.8rem;
+    color: black;
+  }
+
+  .box .content .price span {
+    font-size: 1.2rem;
+    color: var(--light-color);
+    text-decoration: line-through;
+  }
+}
+
+/* @media (max-width:768px) {
+  html {
+    font-size: 59%;
+  }
+} */
+
+@media (max-width:991px) {
+
+  /* awal header */
+
+  html {
+    font-size: 50%;
+  }
+
+  /* akhir header */
+
+}

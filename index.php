@@ -63,9 +63,9 @@ $wingko = pickRandom("Wingko");
 
   <!-- kolom search -->
 
-  <form action="" id="search-form">
-    <input type="search" placeholder="search here..." name="" id="search-box">
-    <label for="search-box" class="fas fa-search"></label>
+  <form action="php/product.php" method="get" id="search-form">
+    <input type="text" placeholder="search here..." name="keyword" id="search-box">
+    <label type="submit" name="cari" for="search-box" class="fas fa-search"></label>
     <i class="fas fa-times" id="close"></i>
   </form>
 
@@ -128,7 +128,7 @@ $wingko = pickRandom("Wingko");
 
   <!-- awal category -->
 
-  <section class="category" id="category">
+  <!-- <section class="category" id="category">
 
     <a href="#" class="box">
       <img src="images/cat-1.png" alt="">
@@ -160,7 +160,7 @@ $wingko = pickRandom("Wingko");
       <h3>combo</h3>
     </a>
 
-  </section>
+  </section> -->
 
   <!-- akhir category -->
 

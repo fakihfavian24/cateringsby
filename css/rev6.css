@@ -359,7 +359,7 @@ header .icons #menu-bars {
   background: #fff;
   padding: 2rem;
   text-align: center;
-  box-shadow: .5px .5px 1px rgba(0, 0, 0, .100);
+  box-shadow: .5px .5px 6px rgba(0, 0, 0, .100);
 }
 
 .boxp .fa-heart {

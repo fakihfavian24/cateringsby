@@ -34,7 +34,7 @@ section {
 .sub-heading {
   text-align: left;
   color: var(--green);
-  font-size: 2.3rem;
+  font-size: 2.8rem;
   padding-top: 1rem;
 }
 
@@ -70,7 +70,7 @@ header {
 
 header .logo {
   color: var(--black);
-  font-size: 3.3rem;
+  font-size: 2.5rem;
   font-weight: bolder;
 }
 
@@ -86,6 +86,61 @@ header .navbar a {
 }
 
 
+header .icons a {
+  cursor: pointer;
+  margin-left: .5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  font-size: 1.7rem;
+  color: var(--black);
+  border-radius: 50%;
+  background: #eee;
+}
+
+
+header .icons a:hover {
+  color: #fff;
+  background: var(--green);
+  transform: rotate(360deg);
+}
+
+/* Kolom Search */
+
+#search-form {
+  /* border: .2rem solid rgba(0, 0, 0, 0.100); */
+  background-color: #eee;
+  border-radius: .5rem;
+  height: 4rem;
+  width: 60rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+
+}
+
+#search-form #search-box {
+  width: 100%;
+  padding-right: 1rem;
+  font-size: 1.7rem;
+  text-transform: none;
+  background-color: #eee;
+}
+
+#search-form label {
+  font-size: 2rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+#search-form label:hover {
+  color: var(--green);
+}
+
+/* Akhir Kolom Search */
+
+
 
 .home {
   padding-top: 9rem;
@@ -93,6 +148,7 @@ header .navbar a {
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.100);
 }
 
 .home .image {
@@ -129,9 +185,9 @@ header .navbar a {
 
 /* awal more */
 
-.popular {
+/* .popular {
   background: #f7f7f7;
-}
+} */
 
 .popular .box-container {
   display: grid;
@@ -147,6 +203,7 @@ header .navbar a {
   background: #fff;
   padding: 2rem;
   text-align: center;
+  box-shadow: .5px .5px 6px rgba(0, 0, 0, .100);
 }
 
 .box .fa-heart {
@@ -206,6 +263,10 @@ header .navbar a {
 
 /* awal footer */
 
+.footer {
+  background: #f7f7f7;
+}
+
 .footer .box-containers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -260,6 +321,14 @@ header .navbar a {
   header {
     padding: 1rem 2rem;
   }
+
+
+  #search-form {
+    height: 4rem;
+    width: 25rem;
+    border-radius: .5rem;
+  }
+
 
   .home .image img {
     width: 100%;

@@ -33,7 +33,7 @@ $sarang = pickRandom("Sarang");
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- link css -->
-  <link rel="stylesheet" href="css/detil10.css">
+  <link rel="stylesheet" href="css/detil12.css">
 
 </head>
 
@@ -45,7 +45,16 @@ $sarang = pickRandom("Sarang");
 
     <a href="index.php" class="logo"><i class="fas fa-arrow-left"></i></a>
 
-  </header> -->
+    <form action="php/product.php" method="get" id="search-form">
+      <input type="text" placeholder="search here..." name="keyword" id="search-box">
+      <label type="submit" name="cari" for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+      <a href="php/login.php" class="fas fa-user"></a>
+    </div>
+
+  </header>
 
   <!-- akhir header -->
 

@@ -2,19 +2,20 @@
 
 require 'functions.php';
 
-$menu  = query("SELECT * FROM menu");
 
-// if (!isset($_GET['search'])) {
-//   $text = "Beragam produk terbaik ada di sini";
-//   $items = query("SELECT * FROM furniture_items");
-// } else if (isset($_GET['search'])) {
-//   $items = cari($_GET['keyword']);
-//   $text = "Beragam produk " . $_GET['keyword'] . " terbaik ada di sini";
-//   if (empty($items)) {
-//     $text = "Produk " . $_GET['keyword'] . " tidak dapat ditemukan disini.";
-//     $items = query("SELECT * FROM furniture_items");
-//   }
-// }
+
+if (!isset($_GET['cari'])) {
+  $text = "Beragam produk terbaik ada di sini";
+  // $items = query("SELECT * FROM furniture_items");
+  $menu  = query("SELECT * FROM menu");
+} else if (isset($_GET['cari'])) {
+  $menu = cari($_GET['keyword']);
+  $text = "Beragam produk " . $_GET['keyword'] . " terbaik ada di sini";
+  if (empty($menu)) {
+    $text = "Produk " . $_GET['keyword'] . " tidak dapat ditemukan disini.";
+    $menu  = query("SELECT * FROM menu");
+  }
+}
 
 ?>
 <!DOCTYPE html>
@@ -59,6 +60,10 @@ $menu  = query("SELECT * FROM menu");
   <!-- akhir header -->
 
   <!-- awal more -->
+
+  <br><br><br><br><br><br>
+
+  <h1><?= $text; ?></h1>
 
   <section class="popular">
 
